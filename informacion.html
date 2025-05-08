@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Información - Enfiestate</title>
+    <link rel="stylesheet" href="Untitled-1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="mainHeader"> 
+        <div class="header-content">
+            <h1 class="header-title">Enfiestate</h1>
+            <div class="header-right">
+                <div class="logo-container"></div>
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Buscar evento, artista...">
+                </div>
+                <a href="#" class="search-btn-mobile">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </a>
+                <a href="informacion.html" class="info-btn active"> <!-- Marcado como activo aquí -->
+                    <svg viewBox="0 0 24 24">
+                       <path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+    <h1 class="main-title">SOBRE ENFIESTATE</h1>
+    <main class="info-container">
+        <section class="info-section">
+            <h2>Nuestra Misión</h2>
+            <p>¿Cansado de buscar y no encontrar el lugar perfecto para salir? ¿Perdido entre miles de eventos y flyers? ¡Enfiestate nació para solucionar eso! Nuestra misión es simple: <strong>conectar a la gente con la vibrante escena nocturna de Buenos Aires de la forma más fácil y directa posible.</strong></p>
+            <p>Queremos ser tu brújula en la noche porteña, ayudándote a descubrir fiestas, bares y eventos que se ajusten a tus gustos musicales y a tu onda. Olvídate de la incertidumbre, ¡aquí encontrarás tu próxima gran noche!</p>
+        </section>
+
+        <section class="info-section">
+            <h2>Nuestra Historia (¡Recién empieza!)</h2>
+            <p>Todo comenzó con la misma frustración que seguro sentiste alguna vez: querer salir y pasar horas buscando opciones, preguntando a amigos, revisando redes sociales... Vimos la necesidad de un espacio centralizado, actualizado y fácil de usar que reuniera las mejores propuestas de la ciudad.</p>
+            <p>Así, un grupo de entusiastas de la noche decidimos crear Enfiestate. Estamos en constante desarrollo, buscando siempre mejorar y añadir más funcionalidades para que tu única preocupación sea ¡disfrutar!</p>
+        </section>
+
+        <section class="info-section info-logo-emphasis">
+             <h2>El Espíritu Enfiestate</h2>
+             <img src="enfiestate logo.png" alt="Logo Enfiestate"> 
+             <p>Creemos en la música, en la conexión y en las experiencias inolvidables. ¡Gracias por ser parte de nuestra comunidad!</p>
+        </section>
+    </main>
+    <nav class="nav-footer" id="footerNav">
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-item">Inicio</a>
+            <a href="generos.html" class="nav-item">Géneros</a>
+            <a href="" class="nav-item">Tickets</a>
+            <a href="artistas.html" class="nav-item">Artistas</a>
+        </div>
+    </nav>
+
+     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.getElementById('mainHeader');
+            const searchBtnMobile = document.querySelector('.search-btn-mobile');
+            const searchContainer = document.querySelector('.search-container');
+            const searchInput = document.getElementById('searchInput');
+            const logoContainer = document.querySelector('.logo-container');
+            const headerTitle = document.querySelector('.header-title');
+            const infoBtn = document.querySelector('.info-btn'); 
+
+             if (searchBtnMobile && searchContainer && header) {
+                 searchBtnMobile.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    header.classList.toggle('search-active');
+                     if(infoBtn) {
+                        infoBtn.style.opacity = header.classList.contains('search-active') ? '0' : '1';
+                        infoBtn.style.pointerEvents = header.classList.contains('search-active') ? 'none' : 'auto';
+                     }
+
+                    if (header.classList.contains('search-active')) {
+                        setTimeout(() => { searchInput.focus(); }, 100);
+                     }
+                 });
+             }
+        });
+    </script>
+
+</body>
+</html>

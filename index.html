@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Enfiestate - Próximas Fechas</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="Untitled-1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav aria-label="Navegación principal del encabezado">
+        <header id="mainHeader">
+            <div class="header-content">
+                <input type="checkbox" id="search-toggle-checkbox" class="search-toggle-checkbox">
+
+                <h1 class="header-title">Enfiestate</h1>
+
+                <div class="header-right">
+                    <div class="logo-container"></div>
+                    <a href="informacion.html" class="info-btn">
+                        <svg viewBox="0 0 24 24">
+                           <path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <label for="search-toggle-checkbox" class="search-btn-mobile-label">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </label>
+
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Buscar evento, artista...">
+                </div>
+            </div>
+        </header>
+    </nav>
+
+    <section class="genre-slider-section">
+        <div class="swiper-container genre-slider-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide genre-slide genre-slide--techno">
+                    <div class="genre-slide-content"><h3>TECHNO</h3></div>
+                </div>
+                <div class="swiper-slide genre-slide genre-slide--cachengue">
+                    <div class="genre-slide-content"><h3>CACHENGUE</h3></div>
+                </div>
+                <div class="swiper-slide genre-slide genre-slide--techengue">
+                     <div class="genre-slide-content"><h3>TECHENGUE</h3></div>
+                </div>
+                <div class="swiper-slide genre-slide genre-slide--reggaeton">
+                    <div class="genre-slide-content"><h3>REGGAETON</h3></div>
+                </div>
+                <div class="swiper-slide genre-slide genre-slide--electronica">
+                    <div class="genre-slide-content"><h3>ELECTRÓNICA</h3></div>
+                </div>
+                <div class="swiper-slide genre-slide genre-slide--house">
+                    <div class="genre-slide-content"><h3>HOUSE</h3></div>
+                </div>
+                <div class="swiper-slide genre-slide genre-slide--indie">
+                    <div class="genre-slide-content"><h3>TRAP/RAP</h3></div>
+                </div>
+                <div class="swiper-slide genre-slide genre-slide--pop">
+                    <div class="genre-slide-content"><h3>POP</h3></div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <h1 class="main-title">PRÓXIMAS FECHAS</h1>
+    <main>
+        <div class="party-grid">
+            <a href="evento-1.html" class="party-card">
+                <img src="fiesta 1.jpeg" alt="Flyer Evento 1">
+                <div class="party-info-overlay">
+                    <p class="party-date">VIERNES 23 AGO</p>
+                </div>
+            </a>
+            <a href="evento-2.html" class="party-card">
+                <img src="fiesta 2.jpg" alt="Flyer Evento 2">
+                <div class="party-info-overlay">
+                    <p class="party-date">SÁBADO 31 AGO</p>
+                </div>
+            </a>
+            <a href="evento-3.html" class="party-card">
+                <img src="fiesta 3.jpg" alt="Flyer Evento 3">
+                <div class="party-info-overlay">
+                    <p class="party-date">VIERNES 06 SEP</p>
+                </div>
+            </a>
+            <a href="evento-4.html" class="party-card">
+                <img src="fiesta 4.jpg" alt="Flyer Evento 4">
+                <div class="party-info-overlay">
+                    <p class="party-date">SÁBADO 14 SEP</p>
+                </div>
+            </a>
+            <a href="evento-5.html" class="party-card">
+                <img src="fiesta 5.jpeg" alt="Flyer Evento 5">
+                <div class="party-info-overlay">
+                    <p class="party-date">VIERNES 20 SEP</p>
+                </div>
+            </a>
+            <a href="evento-6.html" class="party-card">
+                <img src="fiesta 6.jpg" alt="Flyer Evento 6">
+                <div class="party-info-overlay">
+                    <p class="party-date">SÁBADO 28 SEP</p>
+                </div>
+            </a>
+        </div>
+    </main>
+    <nav class="nav-footer" id="footerNav" aria-label="Navegación principal del pie de página">
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-item active">Inicio</a>
+            <a href="generos.html" class="nav-item">Géneros</a>
+            <a href="#" class="nav-item">Tickets</a>
+            <a href="artistas.html" class="nav-item">Artistas</a>
+        </div>
+    </nav>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var genreSwiper = new Swiper('.genre-slider-container', {
+            slidesPerView: 2.3,
+            spaceBetween: 10,
+            loop: true,
+            centeredSlides: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                480: { slidesPerView: 2.8, spaceBetween: 10 },
+                640: { slidesPerView: 3.5, spaceBetween: 12 },
+                768: { slidesPerView: 4.2, spaceBetween: 12 },
+                1024: { slidesPerView: 5.2, spaceBetween: 15 },
+                1200: { slidesPerView: 6.2, spaceBetween: 18 }
+            }
+        });
+
+        const searchToggleCheckbox = document.getElementById('search-toggle-checkbox');
+        const searchInput = document.getElementById('searchInput');
+        if (searchToggleCheckbox && searchInput) {
+            searchToggleCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    setTimeout(() => { searchInput.focus(); }, 50);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
