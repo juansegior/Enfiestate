@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tickets - Enfiestate</title>
+    <!-- Asegúrate de que la ruta a Untitled-1.css sea correcta -->
+    <link rel="stylesheet" href="Untitled-1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
+   
+</head>
+<body>
+    <nav aria-label="Navegación principal del encabezado">
+        <header id="mainHeader">
+            <div class="header-content">
+                <input type="checkbox" id="search-toggle-checkbox" class="search-toggle-checkbox">
+
+                <h1 class="header-title">Enfiestate</h1>
+
+                <div class="header-right">
+                    <div class="logo-container"></div> <!-- Asumo que tienes 'enfiestate logo.png' -->
+                    <a href="informacion.html" class="info-btn"> <!-- Cambia "informacion.html" si tu página de info se llama diferente -->
+                        <svg viewBox="0 0 24 24">
+                           <path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <label for="search-toggle-checkbox" class="search-btn-mobile-label">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </label>
+
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Buscar evento, artista...">
+                </div>
+            </div>
+        </header>
+    </nav>
+
+    <h1 class="main-title">SECCIÓN DE TICKETS</h1>
+
+    <main>
+        <div class="tickets-placeholder-container">
+            <svg class="icon-ticket" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.5 3.5a1.5 1.5 0 0 1 0 3h-15a1.5 1.5 0 0 1 0-3h15zm0 14h-15a1.5 1.5 0 0 1 0 3h15a1.5 1.5 0 0 1 0-3zm-15-7a1.5 1.5 0 0 0-1.5 1.5v5a1.5 1.5 0 0 0 1.5 1.5h15a1.5 1.5 0 0 0 1.5-1.5v-5a1.5 1.5 0 0 0-1.5-1.5h-15zm1.5 1.5h12v5h-12v-5zM6 8H4v2h2V8zm0 3H4v2h2v-2zm0 3H4v2h2v-2zm14-6h-2V8h2v2zm0 3h-2v-2h2v2zm0 3h-2v-2h2v2z"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H4zm0 1.5a.5.5 0 0 0-.5.5v16a.5.5 0 0 0 .5.5h16a.5.5 0 0 0 .5-.5V4a.5.5 0 0 0-.5-.5H4z"/>
+            </svg>
+            <h2 class="tickets-placeholder-title">¡Próximamente!</h2>
+            <p class="tickets-placeholder-subtitle">
+                Estamos preparando todo para que puedas adquirir tus entradas de la forma más rápida y segura.
+                Esta sección estará disponible muy pronto.
+            </p>
+            <a href="index.html" class="tickets-placeholder-cta">Volver al Inicio</a>
+        </div>
+    </main>
+
+    <nav class="nav-footer" id="footerNav" aria-label="Navegación principal del pie de página">
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-item">Inicio</a>
+            <a href="generos.html" class="nav-item">Géneros</a>
+            <a href="tickets.html" class="nav-item active">Tickets</a> <!-- Marcado como activo -->
+            <a href="artistas.html" class="nav-item">Artistas</a>
+        </div>
+    </nav>
+
+    <script>
+        // Script para el toggle del buscador en el header
+        const searchToggleCheckbox = document.getElementById('search-toggle-checkbox');
+        const searchInput = document.getElementById('searchInput');
+        if (searchToggleCheckbox && searchInput) {
+            searchToggleCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    // Pequeño delay para asegurar que el input es visible antes del focus
+                    setTimeout(() => { searchInput.focus(); }, 50);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

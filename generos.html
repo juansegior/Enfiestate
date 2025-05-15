@@ -8,26 +8,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <h1>Enfiestate</h1>
-            <div class="header-right">
-                <div class="logo-container"></div>
-                <div class="nav-top">
-                    <a href="#" class="search-btn">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="menu-btn">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-                        </svg>
+    <nav aria-label="Navegación principal del encabezado">
+        <header id="mainHeader">
+            <div class="header-content">
+                <input type="checkbox" id="search-toggle-checkbox" class="search-toggle-checkbox">
+                <h1 class="header-title">Enfiestate</h1>
+                <div class="header-right">
+                    <div class="logo-container"></div>
+                    <a href="informacion.html" class="info-btn">
+                        <svg viewBox="0 0 24 24"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
                     </a>
                 </div>
+                <label for="search-toggle-checkbox" class="search-btn-mobile-label">
+                    <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                </label>
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Buscar evento, artista...">
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
+    </nav>
 
     <h1 class="main-title">GÉNEROS POPULARES</h1>
 
@@ -38,12 +38,12 @@
             <p class="genre-description">La mezcla perfecta de reggaetón, pop latino y clásicos para no parar de bailar.</p>
             <h3 class="upcoming-title">Próximas Fechas:</h3>
             <div class="party-grid">
-                <div class="party-card">
+                <a href="evento-detalle-1.html" class="party-card">
                     <img src="creta logo.jpeg" alt="Fiesta Cachengue Creta">
-                </div>
-                <div class="party-card">
+                </a>
+                <a href="evento-moscu.html" class="party-card">
                     <img src="moscu logo.png" alt="Fiesta Cachengue Moscu">
-                </div>
+                </a>
             </div>
         </section>
 
@@ -52,15 +52,15 @@
             <p class="genre-description">Desde House y Techno hasta Trance. Ritmos hipnóticos y atmósferas envolventes.</p>
             <h3 class="upcoming-title">Próximas Fechas:</h3>
             <div class="party-grid">
-                <div class="party-card">
+                <a href="evento-jet.html" class="party-card">
                     <img src="jet logo.jpeg" alt="Fiesta Electrónica Jet">
-                </div>
-                <div class="party-card">
+                </a>
+                <a href="evento-crobar.html" class="party-card">
                     <img src="crobar logo.jpg" alt="Fiesta Electrónica Crobar">
-                </div>
-                <div class="party-card">
+                </a>
+                <a href="evento-underclub.html" class="party-card">
                     <img src="under club logo.png" alt="Fiesta Electrónica Under Club">
-                </div>
+                </a>
             </div>
         </section>
 
@@ -69,18 +69,18 @@
             <p class="genre-description">La fusión del Tech House con los hits del momento. Energía y baile asegurados.</p>
             <h3 class="upcoming-title">Próximas Fechas:</h3>
             <div class="party-grid">
-                <div class="party-card">
+                <a href="evento-thebow.html" class="party-card">
                     <img src="the bow logo.png" alt="Fiesta Techengue The Bow">
-                </div>
-                 <div class="party-card">
+                </a>
+                 <a href="evento-bresh.html" class="party-card">
                     <img src="bresh logo.png" alt="Fiesta Techengue Bresh">
-                </div>
+                </a>
             </div>
         </section>
 
     </main>
 
-    <nav class="nav-footer" id="footerNav">
+    <nav class="nav-footer" id="footerNav" aria-label="Navegación principal del pie de página">
         <div class="nav-buttons">
             <a href="index.html" class="nav-item">Inicio</a>
             <a href="generos.html" class="nav-item active">Géneros</a>
@@ -88,6 +88,16 @@
             <a href="artistas.html" class="nav-item">Artistas</a>
         </div>
     </nav>
-
+    <script>
+        const searchToggleCheckbox = document.getElementById('search-toggle-checkbox');
+        const searchInput = document.getElementById('searchInput');
+        if (searchToggleCheckbox && searchInput) {
+            searchToggleCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    setTimeout(() => { searchInput.focus(); }, 50);
+                }
+            });
+        }
+    </script>
 </body>
 </html>
