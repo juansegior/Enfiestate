@@ -164,16 +164,15 @@ header {
     padding: 0 1rem;
 }
 
-/* --- ESTILOS MODIFICADOS Y NUEVOS PARA PARTY CARD --- */
 .party-card {
-    display: block; /* Para que el <a> se comporte como un div */
-    text-decoration: none; /* Quitar subrayado del enlace */
+    display: block; 
+    text-decoration: none; 
     aspect-ratio: 1 / 1;
-    background: #1a1a1a; /* Fondo por si la imagen no carga o para el área */
+    background: #1a1a1a; 
     border: 1px solid #00ffff33;
     border-radius: 5px;
     overflow: hidden;
-    position: relative; /* Necesario para posicionar el overlay de información */
+    position: relative; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .party-card:hover {
@@ -197,21 +196,21 @@ header {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.75); /* Fondo semitransparente para legibilidad */
+    background: rgba(0, 0, 0, 0.75); 
     padding: 8px 10px;
     box-sizing: border-box;
     transition: background-color 0.3s ease;
-    pointer-events: none; /* Para que el hover de la card siga funcionando bien */
+    pointer-events: none; 
 }
 
 .party-card:hover .party-info-overlay {
-    background: rgba(10, 0, 10, 0.85); /* Cambio sutil al hacer hover en la card */
+    background: rgba(10, 0, 10, 0.85); 
 }
 
 .party-date {
     color: #00ffff;
     font-family: 'Orbitron', sans-serif;
-    font-size: 0.9em; /* Ajusta según preferencia */
+    font-size: 0.9em; 
     text-align: center;
     margin: 0;
     font-weight: 500;
@@ -219,7 +218,6 @@ header {
     text-shadow: 0 0 3px rgba(0, 255, 255, 0.5);
     letter-spacing: 0.5px;
 }
-/* --- FIN ESTILOS MODIFICADOS Y NUEVOS --- */
 
 
 .genres-container {
@@ -621,7 +619,7 @@ header {
     .genre-slider-container .swiper-button-prev::after {
         font-size: 16px;
     }
-    .party-date { /* Ajuste para pantallas pequeñas si es necesario */
+    .party-date { 
         font-size: 0.8em;
         padding: 6px 8px;
     }
@@ -660,7 +658,7 @@ header {
             justify-content: center;
             text-align: center;
             padding: 40px 20px;
-            min-height: calc(100vh - 200px - 100px); /* Ajusta según altura de header y footer */
+            min-height: calc(100vh - 200px - 100px); 
             color: #ffffff;
         }
 
@@ -712,7 +710,6 @@ header {
             transform: scale(1.05);
         }
 
-        /* Ajustes para pantallas más pequeñas */
         @media (max-width: 768px) {
             .tickets-placeholder-title {
                 font-size: 2rem;
@@ -785,13 +782,18 @@ header {
             margin-bottom: 10px;
         }
 
-        .event-section p, .event-section li {
+        .event-section p, .event-section ul li { 
             color: #cccccc;
             font-family: 'Orbitron', sans-serif;
             font-size: 1rem;
             line-height: 1.7;
             margin-bottom: 10px;
         }
+        .event-section ul { 
+            list-style: none;
+            padding-left: 0;
+        }
+
 
         .event-section p strong {
             color: #00ffff;
@@ -893,13 +895,103 @@ header {
             text-shadow: 0 0 5px #e600e6aa;
         }
 
+        .lineup-list {
+            list-style: none;
+            padding: 0;
+        }
+        .artist-lineup-item {
+            margin-bottom: 20px; 
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ffffff1a;
+        }
+        .artist-lineup-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .artist-lineup-item > p { 
+            font-size: 1.2rem; 
+            color: #ffffff;
+            font-weight: 500;
+            margin-bottom: 8px;
+            font-family: 'Audiowide', cursive; 
+            text-shadow: 0 0 3px #ffffff55;
+        }
+
+        .artist-social-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+            flex-wrap: wrap;
+        }
+
+        .artist-social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.8rem; 
+            padding: 6px 12px;
+            border: 1px solid #00ffff66;
+            border-radius: 20px; 
+            color: #00ffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .artist-social-link:hover {
+            background-color: #00ffff22;
+            border-color: #00ffff;
+            color: #ffffff;
+            box-shadow: 0 0 8px #00ffff88;
+            transform: translateY(-1px);
+        }
+
+        .buy-tickets-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .top-buy-button { 
+            margin-bottom: 30px; 
+        }
+
+        .buy-tickets-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, #e600e6, #ff00ff);
+            color: #ffffff;
+            font-family: 'Audiowide', cursive;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            border: none;
+            box-shadow: 0 4px 15px rgba(230, 0, 230, 0.4), 0 0 20px rgba(255, 0, 255, 0.3);
+            transition: all 0.3s ease;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+        }
+        .buy-tickets-btn:hover {
+            background: linear-gradient(45deg, #ff00ff, #e600e6);
+            box-shadow: 0 6px 20px rgba(230, 0, 230, 0.6), 0 0 30px rgba(255, 0, 255, 0.5);
+            transform: scale(1.05) translateY(-2px);
+            color: #fff;
+        }
+
+
         @media (max-width: 768px) {
             .event-section h2 {
                 font-size: 1.6rem;
             }
-            .event-section p, .event-section li {
+            .event-section p, .event-section ul li:not(.artist-lineup-item) { 
                 font-size: 0.9rem;
             }
             .menu-table th { font-size: 0.9rem;}
             .menu-table td { font-size: 0.85rem;}
+
+            .artist-lineup-item > p { font-size: 1.1rem; }
+            .artist-social-link { font-size: 0.75rem; padding: 5px 10px; }
+            .buy-tickets-btn { font-size: 1rem; padding: 10px 25px; }
         }
