@@ -8,27 +8,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header id="mainHeader"> 
-        <div class="header-content">
-            <h1 class="header-title">Enfiestate</h1>
-            <div class="header-right">
-                <div class="logo-container"></div>
-                <div class="search-container">
-                    <input type="text" id="searchInput" class="search-input" placeholder="Buscar evento, artista...">
+    <nav aria-label="Navegación principal del encabezado">
+        <header id="mainHeader">
+            <div class="header-content">
+                <input type="checkbox" id="search-toggle-checkbox" class="search-toggle-checkbox">
+
+                <h1 class="header-title">Enfiestate</h1>
+
+                <div class="header-right">
+                    <div class="logo-container"></div>
+                    
+                    <!-- ÍCONO DE CONTACTO/USUARIO -->
+                    <a href="contacto.html" class="contact-btn" aria-label="Ir a la página de contacto">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                    </a>
+
+                    <!-- ÍCONO DE INFORMACIÓN (Marcado como activo en esta página) -->
+                    <a href="informacion.html" class="info-btn active" aria-label="Página actual: Información">
+                        <svg viewBox="0 0 24 24">
+                           <path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                        </svg>
+                    </a>
                 </div>
-                <a href="#" class="search-btn-mobile">
+
+                <label for="search-toggle-checkbox" class="search-btn-mobile-label">
                     <svg viewBox="0 0 24 24">
                         <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
                     </svg>
-                </a>
-                <a href="informacion.html" class="info-btn active"> <!-- Marcado como activo aquí -->
-                    <svg viewBox="0 0 24 24">
-                       <path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-                    </svg>
-                </a>
+                </label>
+
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Buscar evento, artista...">
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
+    </nav>
+
     <h1 class="main-title">SOBRE ENFIESTATE</h1>
     <main class="info-container">
         <section class="info-section">
@@ -49,41 +66,27 @@
              <p>Creemos en la música, en la conexión y en las experiencias inolvidables. ¡Gracias por ser parte de nuestra comunidad!</p>
         </section>
     </main>
+
     <nav class="nav-footer" id="footerNav">
         <div class="nav-buttons">
             <a href="index.html" class="nav-item">Inicio</a>
             <a href="generos.html" class="nav-item">Géneros</a>
-            <a href="" class="nav-item">Tickets</a>
+            <a href="tickets.html" class="nav-item">Tickets</a>
             <a href="artistas.html" class="nav-item">Artistas</a>
         </div>
     </nav>
 
      <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const header = document.getElementById('mainHeader');
-            const searchBtnMobile = document.querySelector('.search-btn-mobile');
-            const searchContainer = document.querySelector('.search-container');
-            const searchInput = document.getElementById('searchInput');
-            const logoContainer = document.querySelector('.logo-container');
-            const headerTitle = document.querySelector('.header-title');
-            const infoBtn = document.querySelector('.info-btn'); 
-
-             if (searchBtnMobile && searchContainer && header) {
-                 searchBtnMobile.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    header.classList.toggle('search-active');
-                     if(infoBtn) {
-                        infoBtn.style.opacity = header.classList.contains('search-active') ? '0' : '1';
-                        infoBtn.style.pointerEvents = header.classList.contains('search-active') ? 'none' : 'auto';
-                     }
-
-                    if (header.classList.contains('search-active')) {
-                        setTimeout(() => { searchInput.focus(); }, 100);
-                     }
-                 });
-             }
-        });
+        // Script para el foco en el buscador (igual que en index.html)
+        const searchToggleCheckbox = document.getElementById('search-toggle-checkbox');
+        const searchInput = document.getElementById('searchInput');
+        if (searchToggleCheckbox && searchInput) {
+            searchToggleCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    setTimeout(() => { searchInput.focus(); }, 50);
+                }
+            });
+        }
     </script>
-
 </body>
 </html>

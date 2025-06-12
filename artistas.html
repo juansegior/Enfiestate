@@ -15,7 +15,10 @@
                 <h1 class="header-title">Enfiestate</h1>
                 <div class="header-right">
                     <div class="logo-container"></div>
-                    <a href="informacion.html" class="info-btn">
+                    <a href="contacto.html" class="contact-btn" aria-label="Ir a la página de contacto">
+                        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    </a>
+                    <a href="informacion.html" class="info-btn" aria-label="Ir a la página de información">
                         <svg viewBox="0 0 24 24"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
                     </a>
                 </div>
@@ -32,36 +35,35 @@
     <h1 class="main-title">ARTISTAS DESTACADOS</h1>
 
     <main class="artists-container">
-
         <article class="artist-card">
-            <img src="fer palacios foto.jpeg" alt="Foto de Fer Palacios" class="artist-image">
+            <!-- MODIFICACIÓN: Imagen envuelta en un enlace -->
+            <a href="#fer-palacios-lightbox">
+                <img src="fer palacios foto1.jpg" alt="Foto de Fer Palacios" class="artist-image">
+            </a>
             <div class="artist-info">
                 <h2 class="artist-name">Fer Palacios</h2>
                 <p class="artist-genre">Productor urbano, y DJ generico</p>
                 <p class="artist-bio">Pionero argentino en generar contenido de musica cachengue y ejemplo para muchos artistas principales</p>
                 <h3 class="artist-upcoming-title">Eventos Relacionados:</h3>
                 <div class="party-grid artist-event-grid">
-                    <a href="evento-detalle-1.html" class="party-card">
-                        <img src="fer palacios fiesta 1.jpeg" alt="Evento Fer Palacios Ejemplo 1">
-                    </a>
-                    <a href="evento-ferpa-2.html" class="party-card">
-                        <img src="fer palacio fiesta 2.jpg" alt="Evento Fer Palacios Ejemplo 2">
-                    </a>
+                    <a href="evento-detalle-1.html" class="party-card"><img src="fer palacios fiesta 1.jpeg" alt="Evento Fer Palacios Ejemplo 1"></a>
+                    <a href="evento-ferpa-2.html" class="party-card"><img src="fer palacio fiesta 2.jpg" alt="Evento Fer Palacios Ejemplo 2"></a>
                 </div>
             </div>
         </article>
 
         <article class="artist-card">
-            <img src="nacho serra.jpg" alt="Foto de Nacho Serra" class="artist-image">
+            <!-- MODIFICACIÓN: Imagen envuelta en un enlace -->
+            <a href="#nacho-serra-lightbox">
+                <img src="nacho serra1.jpg" alt="Foto de Nacho Serra" class="artist-image">
+            </a>
              <div class="artist-info">
                 <h2 class="artist-name">Nacho Serra</h2>
                 <p class="artist-genre">DJ de techengue</p>
                 <p class="artist-bio">Dj argentino, de los pioneros en incluir el techengue en sus sets nocturnos</p>
                 <h3 class="artist-upcoming-title">Eventos Relacionados:</h3>
                 <div class="party-grid artist-event-grid">
-                    <a href="evento-nachoserra-1.html" class="party-card">
-                        <img src="nacho serra fiesta 1.jpg" alt="Evento Nacho Serra Ejemplo 1">
-                    </a>
+                    <a href="evento-nachoserra-1.html" class="party-card"><img src="nacho serra fiesta 1.jpg" alt="Evento Nacho Serra Ejemplo 1"></a>
                 </div>
             </div>
         </article>
@@ -74,17 +76,22 @@
                 <p class="artist-bio">DJ pionero del cachengue, uno de los primeros de los djs del pais en explotar el genero y hacer bailar a la gente por horas.</p>
                  <h3 class="artist-upcoming-title">Eventos Relacionados:</h3>
                 <div class="party-grid artist-event-grid">
-                    <a href="evento-alangomez-1.html" class="party-card">
-                        <img src="alan gomez fiesta 1.png" alt="Evento Alan Gomez Ejemplo 1">
-                    </a>
-                     <a href="evento-alangomez-2.html" class="party-card">
-                        <img src="fiesta alan gomez 2.webp" alt="Evento Alan Gomez Ejemplo 2">
-                    </a>
+                    <a href="evento-alangomez-1.html" class="party-card"><img src="alan gomez fiesta 1.png" alt="Evento Alan Gomez Ejemplo 1"></a>
+                     <a href="evento-alangomez-2.html" class="party-card"><img src="fiesta alan gomez 2.webp" alt="Evento Alan Gomez Ejemplo 2"></a>
                 </div>
             </div>
         </article>
-
     </main>
+
+    <!-- ESTRUCTURA DEL VISOR DE IMÁGENES (LIGHTBOX CSS-ONLY) -->
+    <div class="lightbox" id="fer-palacios-lightbox">
+        <a href="#" class="lightbox-close">×</a>
+        <img src="fer palacios foto.jpeg" alt="Foto ampliada de Fer Palacios">
+    </div>
+    <div class="lightbox" id="nacho-serra-lightbox">
+        <a href="#" class="lightbox-close">×</a>
+        <img src="nacho serra.jpg" alt="Foto ampliada de Nacho Serra">
+    </div>
 
     <nav class="nav-footer" id="footerNav" aria-label="Navegación principal del pie de página">
         <div class="nav-buttons">

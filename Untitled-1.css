@@ -9,16 +9,18 @@ body {
     font-family: 'Orbitron', sans-serif;
     color: #ffffff;
     min-height: 100vh;
-    padding-bottom: 100px;
+    padding-bottom: 100px; /* Espacio para el footer fijo */
     line-height: 1.6;
 }
+
+/* --- ESTILOS DEL HEADER MODIFICADOS --- */
 
 header {
     background: #0a0a0a;
     padding: 1rem;
     border-bottom: 2px solid #e600e6;
     box-shadow: 0 0 10px rgba(230, 0, 230, 0.2);
-    position: relative;
+    position: relative; 
     z-index: 100;
 }
 
@@ -33,7 +35,7 @@ header {
 }
 
 .search-toggle-checkbox {
-    display: none;
+    display: none; 
 }
 
 .header-title {
@@ -46,11 +48,12 @@ header {
     transition: opacity 0.3s ease;
 }
 
+/* --- ESTILOS PARA LOS ICONOS DEL HEADER (MEJORADOS) --- */
 .header-right {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    order: 1; 
+    display: flex; /* USA FLEXBOX PARA ALINEAR ÍCONOS */
+    align-items: center; /* Centra los íconos verticalmente */
+    gap: 15px; /* Crea un espacio entre el logo y los íconos */
+    order: 1; /* Posición en móvil */
 }
 
 .logo-container {
@@ -61,28 +64,45 @@ header {
     transition: opacity 0.3s ease;
 }
 
-.info-btn {
-    padding: 8px;
+/* Estilo común para AMBOS íconos (información y contacto) */
+.info-btn,
+.contact-btn {
     display: flex;
-    transition: opacity 0.3s ease, fill 0.3s ease; 
-    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    color: #cccccc; /* Color del ícono por defecto */
+    width: 28px; 
+    height: 28px; 
+    transition: color 0.3s, filter 0.3s;
     cursor: pointer;
 }
-.info-btn svg {
-    width: 24px;
-    height: 24px;
-    fill: #00ffff;
-    filter: drop-shadow(0 0 3px #00ffff);
-    transition: fill 0.3s ease;
+
+/* Estilo para hover Y para cuando el ícono está ACTIVO */
+.info-btn:hover,
+.contact-btn:hover,
+.info-btn.active,
+.contact-btn.active {
+    color: #e600e6; /* Color magenta al pasar el mouse o si está activo */
 }
-.info-btn:hover svg { fill: #e600e6; }
+
+/* Estilo para el SVG dentro de los botones */
+.info-btn svg,
+.contact-btn svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor; /* El SVG hereda el color del enlace (<a>) */
+    filter: drop-shadow(0 0 3px currentColor);
+}
+
+/* --- FIN DE ESTILOS DE HEADER --- */
+
 
 .search-btn-mobile-label {
     padding: 8px;
-    display: flex;
+    display: flex; 
     cursor: pointer;
     order: 2; 
-    margin-left: 10px; 
+    margin-left: 10px;
 }
 .search-btn-mobile-label svg {
     width: 24px;
@@ -96,17 +116,17 @@ header {
 }
 
 .search-container {
-    display: none;
+    display: none; 
     position: absolute; 
-    top: 100%; 
+    top: 100%;
     left: 0;
     right: 0;
     background: #0a0a0a;
     padding: 0.8rem 1rem;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    border-top: 2px solid #e600e6; 
-    z-index: 99;
-    order: 3; 
+    border-top: 2px solid #e600e6;
+    z-index: 99; 
+    order: 3;
     width: 100%; 
 }
 
@@ -129,20 +149,18 @@ header {
     box-shadow: 0 0 10px rgba(230, 0, 230, 0.5), inset 0 0 8px rgba(230, 0, 230, 0.3);
 }
 
+/* Lógica para mostrar/ocultar buscador en móvil */
 .search-toggle-checkbox:checked ~ .search-container {
     display: block;
 }
-
 .search-toggle-checkbox:checked ~ .header-title,
 .search-toggle-checkbox:checked ~ .header-right .logo-container {
     opacity: 0;
     pointer-events: none;
 }
-
 .search-toggle-checkbox:checked ~ .search-btn-mobile-label svg {
     fill: #e600e6;
 }
-
 
 .main-title {
     text-align: center;
@@ -159,9 +177,9 @@ header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    max-width: 900px;
+    max-width: 900px; 
     margin: 0 auto 1rem auto;
-    padding: 0 1rem;
+    padding: 0 1rem; 
 }
 
 .party-card {
@@ -171,20 +189,20 @@ header {
     background: #1a1a1a; 
     border: 1px solid #00ffff33;
     border-radius: 5px;
-    overflow: hidden;
+    overflow: hidden; 
     position: relative; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .party-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 15px #00ffff66;
+    transform: scale(1.03); 
+    box-shadow: 0 0 15px #00ffff66; 
 }
 .party-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
-    opacity: 0.9;
+    display: block; 
+    opacity: 0.9; 
     transition: opacity 0.3s ease;
 }
 .party-card:hover img { 
@@ -196,30 +214,74 @@ header {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.75); 
+    background: rgba(0, 0, 0, 0.75);
     padding: 8px 10px;
-    box-sizing: border-box;
+    box-sizing: border-box; 
     transition: background-color 0.3s ease;
     pointer-events: none; 
 }
 
 .party-card:hover .party-info-overlay {
-    background: rgba(10, 0, 10, 0.85); 
+    background: rgba(10, 0, 10, 0.85);
 }
 
 .party-date {
-    color: #00ffff;
+    color: #00ffff; 
     font-family: 'Orbitron', sans-serif;
     font-size: 0.9em; 
     text-align: center;
     margin: 0;
     font-weight: 500;
     text-transform: uppercase;
-    text-shadow: 0 0 3px rgba(0, 255, 255, 0.5);
+    text-shadow: 0 0 3px rgba(0, 255, 255, 0.5); 
     letter-spacing: 0.5px;
 }
 
+/* --- ESTILOS DEL FOOTER MODIFICADOS --- */
+.nav-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #0a0a0a;
+    border-top: 2px solid #e600e6;
+    box-shadow: 0 -2px 10px rgba(230, 0, 230, 0.2);
+    z-index: 1000;
+}
 
+.nav-buttons {
+    display: flex; /* ¡LA MAGIA DE FLEXBOX! */
+    justify-content: space-around; /* Distribuye el espacio entre los 4 botones */
+    padding: 5px 0;
+}
+
+.nav-item {
+    flex: 1; /* <-- ¡ESTA ES LA CLAVE! Cada botón ocupa una porción igual */
+    text-align: center; /* Centra el texto dentro de su espacio */
+    color: #cccccc;
+    text-decoration: none;
+    padding: 10px 5px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px; /* Tamaño legible en móviles */
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+    margin: 0 2px;
+}
+
+.nav-item:hover {
+    background-color: rgba(230, 0, 230, 0.15); /* Fondo magenta sutil */
+    color: #e600e6; /* Texto magenta */
+}
+
+.nav-item.active {
+    background-color: rgba(230, 0, 230, 0.15);
+    color: #e600e6;
+    font-weight: 500;
+}
+/* --- FIN DE ESTILOS DE FOOTER --- */
+
+/* Estilos para página de Géneros */
 .genres-container {
     max-width: 1000px;
     margin: 0 auto;
@@ -250,23 +312,25 @@ header {
     margin: 0 auto 1.5rem auto;
     font-family: 'Orbitron', sans-serif;
 }
-.upcoming-title {
+.upcoming-title { /* Título "Próximos en este género" */
     color: #00ffff;
     text-align: left;
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    padding-left: 0;
+    padding-left: 0; /* Sin padding si está dentro de genre-section */
     text-transform: uppercase;
     font-weight: 500;
 }
-.genre-section .party-grid {
-    padding: 0;
-    margin-bottom: 0;
+.genre-section .party-grid { /* Party grid dentro de una sección de género */
+    padding: 0; /* Sin padding extra */
+    margin-bottom: 0; /* Sin margen inferior extra */
 }
+
+/* Estilos para página de Artistas */
 .artists-container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 1rem 2rem 1rem;
+    padding: 0 1rem 2rem 1rem; /* Espacio inferior */
 }
 .artist-card {
     background: #111;
@@ -281,12 +345,12 @@ header {
      box-shadow: 0 8px 25px rgba(0, 255, 255, 0.2);
 }
 .artist-image {
-    width: 100%;
+    width: 100%; /* Ocupa todo el ancho en móvil */
     height: auto;
-    max-height: 400px;
-    object-fit: cover;
+    max-height: 400px; /* Limita altura en móvil */
+    object-fit: cover; /* Cubre el espacio asignado */
     display: block;
-    border-bottom: 2px solid #00ffff;
+    border-bottom: 2px solid #00ffff; /* Borde inferior en móvil */
 }
 .artist-info { padding: 1.5rem; }
 .artist-name {
@@ -294,7 +358,7 @@ header {
     font-size: 2rem;
     color: #ffffff;
     text-shadow: 0 0 8px #ffffffaa;
-    text-align: center;
+    text-align: center; /* Centrado en móvil */
     margin-bottom: 0.5rem;
     text-transform: uppercase;
 }
@@ -302,7 +366,7 @@ header {
     font-family: 'Orbitron', sans-serif;
     font-size: 0.9rem;
     color: #00ffff;
-    text-align: center;
+    text-align: center; /* Centrado en móvil */
     margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -311,10 +375,10 @@ header {
     color: #dddddd;
     font-size: 1rem;
     margin-bottom: 1.5rem;
-    text-align: justify;
-    hyphens: auto;
+    text-align: justify; /* Justificado para mejor lectura */
+    hyphens: auto; /* Permite división de palabras */
 }
-.artist-upcoming-title {
+.artist-upcoming-title { /* "Próximos eventos del artista" */
     color: #e600e6;
     font-size: 1.3rem;
     margin-bottom: 1rem;
@@ -324,17 +388,19 @@ header {
     border-bottom: 1px solid #e600e655;
     padding-bottom: 0.3rem;
 }
-.artist-event-grid {
+.artist-event-grid { /* Party grid específico para artistas */
     padding: 0;
-    max-width: none;
+    max-width: none; /* Sin max-width para que ocupe el contenedor */
     margin: 0;
-    gap: 0.8rem;
-    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem; /* Espaciado menor */
+    grid-template-columns: repeat(2, 1fr); /* Siempre 2 columnas aquí */
 }
+
+/* Estilos para página de Información */
 .info-container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 1rem 1.5rem 3rem 1.5rem;
+    padding: 1rem 1.5rem 3rem 1.5rem; /* Espacio inferior */
     color: #cccccc;
 }
 .info-section { margin-bottom: 2.5rem; }
@@ -358,118 +424,57 @@ header {
 .info-logo-emphasis { text-align: center; margin-top: 3rem; }
 .info-logo-emphasis img { max-width: 250px; height: auto; margin-bottom: 1rem; }
 
-.nav-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: #0a0a0a;
-    padding: 1rem 0.5rem;
-    border-top: 2px solid #e600e6;
-    box-shadow: 0 -2px 10px rgba(230, 0, 230, 0.2);
-    z-index: 1000;
-}
-.nav-buttons {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    max-width: 600px;
-    margin: 0 auto;
-}
-.nav-item {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 0.9rem;
-    padding: 0.5rem;
-    position: relative;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-family: 'Orbitron', sans-serif;
-}
-.nav-item::before {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 2px;
-    background: #00ffff;
-    transition: width 0.3s ease;
-    box-shadow: 0 0 5px #00ffff;
-}
-.nav-item:hover,
-.nav-item.active {
-    color: #e600e6;
-    text-shadow: 0 0 5px #e600e6;
-}
-.nav-item:hover::before { width: 80%; }
-.nav-item.active::before {
-     width: 80%;
-     background: #e600e6;
-     box-shadow: 0 0 5px #e600e6;
-}
-
-@media (min-width: 768px) {
+/* Media Queries para responsividad general */
+@media (min-width: 768px) { /* Estilos para Tablets y Escritorio */
     .header-content {
-        flex-wrap: nowrap; 
+        flex-wrap: nowrap;
     }
     .search-btn-mobile-label {
         display: none !important; 
     }
     .header-title {
         font-size: 2rem;
-        opacity: 1 !important;
-        pointer-events: auto !important;
+        opacity: 1 !important; 
+        pointer-events: auto !important; 
         margin-right: 1rem; 
-        order: 0;
+        order: 0; 
     }
-    .header-right {
-        order: 1;
-        flex-grow: 1; 
-        justify-content: flex-end;
-        margin-left: 0; 
-        gap: 15px;
+    .header-right { 
+        order: 2; /* Movemos todo el bloque a la derecha */
+        margin-left: auto; /* Empuja el bloque a la derecha */
+        gap: 20px;
     }
     .logo-container {
         width: 140px;
         height: 50px;
-        opacity: 1 !important;
-        pointer-events: auto !important;
-        order: 1; 
+        opacity: 1 !important; 
+        pointer-events: auto !important; 
     }
-    .info-btn {
-        opacity: 1 !important;
-        pointer-events: auto !important;
-        order: 2; 
-    }
-    .search-container {
+    .search-container { 
         display: block !important; 
-        position: relative !important;
+        position: relative !important; 
         top: auto !important; left: auto !important; right: auto !important;
         width: auto !important; 
-        max-width: 400px; 
-        background: none !important;
-        padding: 0 !important;
+        max-width: 400px;
+        background: none !important; 
+        padding: 0 !important; 
         box-shadow: none !important;
         border: none !important; 
-        order: 0; 
+        order: 1; /* Buscador entre título y header-right */
         margin: 0 15px; 
+        flex-grow: 1; /* Permitimos que crezca */
     }
 
+    /* Asegura que el título, logo e info no se oculten por el checkbox en desktop */
     .search-toggle-checkbox:checked ~ .header-title,
-    .search-toggle-checkbox:checked ~ .header-right .logo-container,
-    .search-toggle-checkbox:checked ~ .header-right .info-btn {
+    .search-toggle-checkbox:checked ~ .header-right {
         opacity: 1;
         pointer-events: auto;
     }
 
     .main-title { font-size: 2.5rem; }
-    .nav-buttons { max-width: 700px; }
-    main > .party-grid {
+
+    main > .party-grid { 
         grid-template-columns: repeat(3, 1fr);
         max-width: 1000px;
         padding: 0 1rem;
@@ -479,13 +484,13 @@ header {
         grid-template-columns: repeat(3, 1fr);
     }
     .artists-container { max-width: 900px; }
-    .artist-card {
-        display: flex;
-        align-items: flex-start;
+    .artist-card { 
+        display: flex; 
+        align-items: flex-start; 
     }
-    .artist-image {
-        width: 300px;
-        height: auto;
+    .artist-image { 
+        width: 300px; 
+        height: auto; 
         max-height: none;
         object-fit: contain;
         border-bottom: none;
@@ -497,6 +502,7 @@ header {
     .artist-genre { text-align: left; }
     .artist-bio { text-align: left; }
     .artist-event-grid { grid-template-columns: repeat(2, 1fr); }
+
     .info-container {
          max-width: 900px;
          padding: 2rem 2rem 4rem 2rem;
@@ -505,11 +511,9 @@ header {
     .info-section p { font-size: 1.1rem; }
 }
 
-@media (min-width: 1024px) {
-    .nav-buttons { max-width: 800px; }
-    .header-right .search-container { max-width: 500px; } 
+@media (min-width: 1024px) { /* Estilos para Escritorio más grande */
     main > .party-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, 1fr); 
         max-width: 1200px;
     }
     .genre-section .party-grid {
@@ -521,19 +525,16 @@ header {
      .info-container { max-width: 1000px; }
 }
 
-.nav-footer--active {
-  box-shadow: 0 -2px 15px rgba(0, 255, 255, 0.5);
-}
-
+/* Slider de Géneros (Swiper) */
 .genre-slider-section {
     padding: 20px 0;
     background: #030303;
-    overflow: hidden;
+    overflow: hidden; 
 }
 
 .genre-slider-container {
     width: 100%;
-    height: 100px;
+    height: 100px; 
     margin: 0 auto;
 }
 
@@ -563,23 +564,25 @@ header {
 .genre-slide h3 {
     font-family: 'Audiowide', cursive;
     color: #ffffff;
-    font-size: 1.0rem;
+    font-size: 1.0rem; 
     text-transform: uppercase;
     margin: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
 }
 
+/* Colores específicos para cada género (sombras de texto) */
 .genre-slide--techno h3 { text-shadow: 0 0 6px #00ffff, 0 0 12px #00ffff55; }
 .genre-slide--cachengue h3 { text-shadow: 0 0 6px #e600e6, 0 0 12px #e600e655; }
 .genre-slide--techengue h3 { text-shadow: 0 0 6px #ff6600, 0 0 12px #ff660055; }
 .genre-slide--reggaeton h3 { text-shadow: 0 0 6px #ffee00, 0 0 12px #ffee0055; }
 .genre-slide--electronica h3 { text-shadow: 0 0 6px #33ff33, 0 0 12px #33ff3355; }
 .genre-slide--house h3 { text-shadow: 0 0 6px #6666ff, 0 0 12px #6666ff55; }
-.genre-slide--indie h3 { text-shadow: 0 0 6px #cccccc, 0 0 12px #cccccc55; }
+.genre-slide--indie h3 { text-shadow: 0 0 6px #cccccc, 0 0 12px #cccccc55; } /* TRAP/RAP */
 .genre-slide--pop h3 { text-shadow: 0 0 6px #ff80ed, 0 0 12px #ff80ed55; }
 
+/* Botones de navegación del slider Swiper */
 .genre-slider-container .swiper-button-next,
 .genre-slider-container .swiper-button-prev {
     color: #00ffff;
@@ -597,13 +600,14 @@ header {
 }
 
 .genre-slider-container .swiper-button-next::after,
-.genre-slider-container .swiper-button-prev::after {
+.genre-slider-container .swiper-button-prev::after { 
     font-size: 18px;
     font-weight: bold;
     text-shadow: 0 0 4px rgba(0,0,0,0.4);
 }
 
-@media (max-width: 480px) {
+/* Ajustes responsivos para el slider de géneros */
+@media (max-width: 480px) { /* Pantallas muy pequeñas */
     .genre-slider-container {
         height: 90px;
     }
@@ -625,7 +629,7 @@ header {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) { /* Tablets */
     .genre-slider-container {
         height: 110px;
     }
@@ -634,7 +638,7 @@ header {
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) { /* Escritorio */
     .genre-slider-container {
         height: 120px;
     }
@@ -642,7 +646,7 @@ header {
         font-size: 1.2rem;
     }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1200px) { /* Escritorio grande */
     .genre-slider-container {
         height: 130px;
     }
@@ -651,347 +655,569 @@ header {
     }
 }
 
+/* Placeholder para la página de Tickets */
 .tickets-placeholder-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
-            min-height: calc(100vh - 200px - 100px); 
-            color: #ffffff;
-        }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    min-height: calc(100vh - 200px - 100px); 
+    color: #ffffff;
+}
 
-        .tickets-placeholder-container .icon-ticket {
-            width: 80px;
-            height: 80px;
-            fill: #00ffff;
-            margin-bottom: 25px;
-            opacity: 0.7;
-            filter: drop-shadow(0 0 10px #00ffff);
-        }
+.tickets-placeholder-container .icon-ticket {
+    width: 80px;
+    height: 80px;
+    fill: #00ffff;
+    margin-bottom: 25px;
+    opacity: 0.7;
+    filter: drop-shadow(0 0 10px #00ffff);
+}
 
-        .tickets-placeholder-title {
-            font-family: 'Audiowide', cursive;
-            font-size: 2.5rem;
-            color: #e600e6;
-            text-shadow: 0 0 10px #e600e6, 0 0 20px #e600e688;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            line-height: 1.2;
-        }
+.tickets-placeholder-title {
+    font-family: 'Audiowide', cursive;
+    font-size: 2.5rem;
+    color: #e600e6;
+    text-shadow: 0 0 10px #e600e6, 0 0 20px #e600e688;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
 
-        .tickets-placeholder-subtitle {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.2rem;
-            color: #cccccc;
-            max-width: 600px;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
+.tickets-placeholder-subtitle {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    color: #cccccc;
+    max-width: 600px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
 
-        .tickets-placeholder-cta {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1rem;
-            color: #00ffff;
-            padding: 10px 20px;
-            border: 2px solid #00ffff;
-            border-radius: 5px;
-            text-decoration: none;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 8px #00ffff55, inset 0 0 5px #00ffff33;
-        }
+.tickets-placeholder-cta { 
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    color: #00ffff;
+    padding: 10px 20px;
+    border: 2px solid #00ffff;
+    border-radius: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 8px #00ffff55, inset 0 0 5px #00ffff33;
+}
 
-        .tickets-placeholder-cta:hover {
-            background-color: #00ffff22;
-            color: #ffffff;
-            box-shadow: 0 0 15px #00ffff, inset 0 0 10px #00ffff55;
-            transform: scale(1.05);
-        }
+.tickets-placeholder-cta:hover {
+    background-color: #00ffff22;
+    color: #ffffff;
+    box-shadow: 0 0 15px #00ffff, inset 0 0 10px #00ffff55;
+    transform: scale(1.05);
+}
 
-        @media (max-width: 768px) {
-            .tickets-placeholder-title {
-                font-size: 2rem;
-            }
-            .tickets-placeholder-subtitle {
-                font-size: 1rem;
-            }
-            .tickets-placeholder-container .icon-ticket {
-                width: 60px;
-                height: 60px;
-            }
-        }
-        @media (max-width: 480px) {
-            .tickets-placeholder-title {
-                font-size: 1.7rem;
-            }
-             .tickets-placeholder-subtitle {
-                font-size: 0.9rem;
-            }
-        }
+@media (max-width: 768px) { 
+    .tickets-placeholder-title {
+        font-size: 2rem;
+    }
+    .tickets-placeholder-subtitle {
+        font-size: 1rem;
+    }
+    .tickets-placeholder-container .icon-ticket {
+        width: 60px;
+        height: 60px;
+    }
+}
+@media (max-width: 480px) { 
+    .tickets-placeholder-title {
+        font-size: 1.7rem;
+    }
+     .tickets-placeholder-subtitle {
+        font-size: 0.9rem;
+    }
+}
 
-        .event-detail-page {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px 15px 40px 15px; 
-        }
+/* Estilos para la página de Detalle de Evento */
+.event-detail-page {
+    max-width: 900px; 
+    margin: 0 auto;
+    padding: 20px 15px 40px 15px; 
+}
 
-        .event-flyer-container {
-            margin-bottom: 25px;
-            border: 2px solid #00ffff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 0 15px #00ffff66;
-        }
+.event-flyer-container {
+    margin-bottom: 25px;
+    border: 2px solid #00ffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 15px #00ffff66;
+}
 
-        .event-flyer-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-            aspect-ratio: 16 / 9; 
-            object-fit: cover;
-        }
+.event-flyer-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16 / 9; 
+    object-fit: cover;
+}
 
-        .event-section {
-            background-color: #080808; 
-            padding: 20px;
-            margin-bottom: 25px;
-            border: 1px solid #e600e633;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
+.event-section {
+    background-color: #080808; 
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 1px solid #e600e633;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
 
-        .event-section h2 {
-            font-family: 'Audiowide', cursive;
-            color: #e600e6;
-            text-shadow: 0 0 8px #e600e6;
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #e600e655;
-            text-transform: uppercase;
-        }
-        
-        .event-section h3 {
-            font-family: 'Audiowide', cursive;
-            color: #00ffff;
-            text-shadow: 0 0 6px #00ffff;
-            font-size: 1.3rem;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
+.event-section h2 { 
+    font-family: 'Audiowide', cursive;
+    color: #e600e6;
+    text-shadow: 0 0 8px #e600e6;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e600e655;
+    text-transform: uppercase;
+}
 
-        .event-section p, .event-section ul li { 
-            color: #cccccc;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 10px;
-        }
-        .event-section ul { 
-            list-style: none;
-            padding-left: 0;
-        }
+.event-section h3 { 
+    font-family: 'Audiowide', cursive;
+    color: #00ffff;
+    text-shadow: 0 0 6px #00ffff;
+    font-size: 1.3rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
 
+.event-section p, .event-section ul li { 
+    color: #cccccc;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+.event-section ul { 
+    list-style: none;
+    padding-left: 0;
+}
 
-        .event-section p strong {
-            color: #00ffff;
-            font-weight: 500;
-        }
+.event-section p strong { 
+    color: #00ffff;
+    font-weight: 500;
+}
 
-        .map-container {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            padding-top: 56.25%; 
-            border: 1px solid #00ffff33;
-            border-radius: 5px;
-            margin-top: 15px;
-        }
+.map-container { 
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; 
+    border: 1px solid #00ffff33;
+    border-radius: 5px;
+    margin-top: 15px;
+}
 
-        .map-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
 
-        .menu-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
+.menu-table { 
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
 
-        .menu-table th, .menu-table td {
-            border: 1px solid #00ffff44;
-            padding: 10px 12px;
-            text-align: left;
-            font-family: 'Orbitron', sans-serif;
-        }
+.menu-table th, .menu-table td {
+    border: 1px solid #00ffff44;
+    padding: 10px 12px;
+    text-align: left;
+    font-family: 'Orbitron', sans-serif;
+}
 
-        .menu-table th {
-            background-color: #00ffff1a;
-            color: #00ffff;
-            font-size: 1rem;
-            text-transform: uppercase;
-        }
-        
-        .menu-table td {
-            color: #dddddd;
-            font-size: 0.9rem;
-        }
-        .menu-table td:last-child { 
-            text-align: right;
-            color: #00ffff;
-            font-weight: 500;
-        }
+.menu-table th { 
+    background-color: #00ffff1a;
+    color: #00ffff;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
 
-        .social-links-list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 10px;
-        }
+.menu-table td {
+    color: #dddddd;
+    font-size: 0.9rem;
+}
+.menu-table td:last-child { 
+    text-align: right;
+    color: #00ffff;
+    font-weight: 500;
+}
 
-        .social-links-list li a {
-            color: #00ffff;
-            text-decoration: none;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.95rem;
-            padding: 8px 12px;
-            border: 1px solid #00ffff55;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-        .social-links-list li a:hover {
-            background-color: #00ffff22;
-            color: #ffffff;
-            border-color: #00ffff;
-            box-shadow: 0 0 8px #00ffff88;
-        }
+.social-links-list { 
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 15px; 
+    margin-top: 10px;
+}
 
-        .age-restriction {
-            background-color: #e600e61a;
-            border: 1px solid #e600e688;
-            padding: 15px;
-            border-radius: 5px;
-            text-align: center;
-            margin-top: 20px;
-        }
-        .age-restriction p {
-            margin: 0;
-            font-size: 1.1rem;
-            color: #e600e6;
-            font-weight: 500;
-            text-transform: uppercase;
-            text-shadow: 0 0 5px #e600e6aa;
-        }
+.social-links-list li a {
+    color: #00ffff;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.95rem;
+    padding: 8px 12px;
+    border: 1px solid #00ffff55;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+.social-links-list li a:hover {
+    background-color: #00ffff22;
+    color: #ffffff;
+    border-color: #00ffff;
+    box-shadow: 0 0 8px #00ffff88;
+}
 
-        .lineup-list {
-            list-style: none;
-            padding: 0;
-        }
-        .artist-lineup-item {
-            margin-bottom: 20px; 
-            padding-bottom: 15px;
-            border-bottom: 1px solid #ffffff1a;
-        }
-        .artist-lineup-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
+.age-restriction { 
+    background-color: #e600e61a;
+    border: 1px solid #e600e688;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+}
+.age-restriction p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #e600e6;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px #e600e6aa;
+}
 
-        .artist-lineup-item > p { 
-            font-size: 1.2rem; 
-            color: #ffffff;
-            font-weight: 500;
-            margin-bottom: 8px;
-            font-family: 'Audiowide', cursive; 
-            text-shadow: 0 0 3px #ffffff55;
-        }
+.lineup-list { 
+    list-style: none;
+    padding: 0;
+}
+.artist-lineup-item { 
+    margin-bottom: 20px; 
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ffffff1a; 
+}
+.artist-lineup-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
 
-        .artist-social-links {
-            display: flex;
-            gap: 10px;
-            margin-top: 5px;
-            flex-wrap: wrap;
-        }
+.artist-lineup-item > p {
+    font-size: 1.2rem; 
+    color: #ffffff;
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-family: 'Audiowide', cursive; 
+    text-shadow: 0 0 3px #ffffff55;
+}
 
-        .artist-social-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 0.8rem; 
-            padding: 6px 12px;
-            border: 1px solid #00ffff66;
-            border-radius: 20px; 
-            color: #00ffff;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-family: 'Orbitron', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .artist-social-link:hover {
-            background-color: #00ffff22;
-            border-color: #00ffff;
-            color: #ffffff;
-            box-shadow: 0 0 8px #00ffff88;
-            transform: translateY(-1px);
-        }
+.artist-social-links { 
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+    flex-wrap: wrap;
+}
 
-        .buy-tickets-container {
-            margin-top: 20px;
-            text-align: center;
-        }
-        .top-buy-button { 
-            margin-bottom: 30px; 
-        }
+.artist-social-link { 
+    display: inline-flex; 
+    align-items: center;
+    gap: 5px;
+    font-size: 0.8rem; 
+    padding: 6px 12px;
+    border: 1px solid #00ffff66;
+    border-radius: 20px;
+    color: #00ffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.artist-social-link:hover {
+    background-color: #00ffff22;
+    border-color: #00ffff;
+    color: #ffffff;
+    box-shadow: 0 0 8px #00ffff88;
+    transform: translateY(-1px);
+}
 
-        .buy-tickets-btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: linear-gradient(45deg, #e600e6, #ff00ff);
-            color: #ffffff;
-            font-family: 'Audiowide', cursive;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            border: none;
-            box-shadow: 0 4px 15px rgba(230, 0, 230, 0.4), 0 0 20px rgba(255, 0, 255, 0.3);
-            transition: all 0.3s ease;
-            letter-spacing: 1.5px;
-            font-weight: 500;
-        }
-        .buy-tickets-btn:hover {
-            background: linear-gradient(45deg, #ff00ff, #e600e6);
-            box-shadow: 0 6px 20px rgba(230, 0, 230, 0.6), 0 0 30px rgba(255, 0, 255, 0.5);
-            transform: scale(1.05) translateY(-2px);
-            color: #fff;
-        }
+.buy-tickets-container { 
+    margin-top: 20px;
+    text-align: center;
+}
+.top-buy-button { 
+    margin-bottom: 30px; 
+}
 
+.buy-tickets-btn { 
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(45deg, #e600e6, #ff00ff); 
+    color: #ffffff;
+    font-family: 'Audiowide', cursive;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border: none;
+    box-shadow: 0 4px 15px rgba(230, 0, 230, 0.4), 0 0 20px rgba(255, 0, 255, 0.3);
+    transition: all 0.3s ease;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+}
+.buy-tickets-btn:hover {
+    background: linear-gradient(45deg, #ff00ff, #e600e6);
+    box-shadow: 0 6px 20px rgba(230, 0, 230, 0.6), 0 0 30px rgba(255, 0, 255, 0.5);
+    transform: scale(1.05) translateY(-2px);
+    color: #fff;
+}
 
-        @media (max-width: 768px) {
-            .event-section h2 {
-                font-size: 1.6rem;
-            }
-            .event-section p, .event-section ul li:not(.artist-lineup-item) { 
-                font-size: 0.9rem;
-            }
-            .menu-table th { font-size: 0.9rem;}
-            .menu-table td { font-size: 0.85rem;}
+/* Ajustes responsivos para página de detalle de evento */
+@media (max-width: 768px) {
+    .event-section h2 {
+        font-size: 1.6rem;
+    }
+    .event-section p, .event-section ul li:not(.artist-lineup-item) { 
+        font-size: 0.9rem;
+    }
+    .menu-table th { font-size: 0.9rem;}
+    .menu-table td { font-size: 0.85rem;}
 
-            .artist-lineup-item > p { font-size: 1.1rem; }
-            .artist-social-link { font-size: 0.75rem; padding: 5px 10px; }
-            .buy-tickets-btn { font-size: 1rem; padding: 10px 25px; }
-        }
+    .artist-lineup-item > p { font-size: 1.1rem; }
+    .artist-social-link { font-size: 0.75rem; padding: 5px 10px; }
+    .buy-tickets-btn { font-size: 1rem; padding: 10px 25px; }
+}
+
+/* ESTILOS PARA IFRAME AD CONTAINER (en index.html) */
+.iframe-ad-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #030303; 
+}
+
+#externalAd { 
+    border: none;
+    overflow: hidden; 
+    
+    width: 300px;
+    height: 600px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3); 
+}
+
+@media (min-width: 768px) { 
+    #externalAd {
+        width: 728px;
+        height: 90px;
+    }
+    .iframe-ad-container {
+        padding: 25px 0;
+    }
+}
+
+/* ESTILOS PARA PÁGINA DE CONTACTO Y FORMULARIOS */
+.suggestion-page-main { 
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    padding: 20px 15px;
+}
+
+.suggestion-form-container { 
+    background-color: #0f0f0f;
+    padding: 25px 30px;
+    border: 1px solid #00ffff55;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.15); 
+}
+
+.suggestion-intro { 
+    color: #cccccc;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #00ffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #1a1a1a;
+    border: 1px solid #00ffff88;
+    border-radius: 5px;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 0 5px rgba(0, 255, 255, 0.1);
+}
+.form-group input[type="text"]::placeholder,
+.form-group input[type="email"]::placeholder,
+.form-group textarea::placeholder {
+    color: #888888;
+    opacity: 0.7;
+}
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: #e600e6;
+    box-shadow: 0 0 10px rgba(230, 0, 230, 0.3), inset 0 0 8px rgba(230, 0, 230, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.error-message {
+    display: block;
+    color: #ff4d4d;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    min-height: 1em;
+}
+
+.form-group input.input-error,
+.form-group textarea.input-error {
+    border-color: #ff4d4d !important;
+    box-shadow: 0 0 8px rgba(255, 77, 77, 0.5) !important;
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #00ffff, #00e0e0);
+    color: #000000;
+    font-family: 'Audiowide', cursive;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3), 0 0 15px rgba(0, 224, 224, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+.submit-btn:hover {
+    background: linear-gradient(45deg, #00e0e0, #00ffff);
+    box-shadow: 0 6px 20px rgba(0, 255, 255, 0.5), 0 0 25px rgba(0, 224, 224, 0.4);
+    transform: translateY(-2px);
+    color: #0a0a0a;
+}
+
+.form-response-message {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    min-height: 1.5em;
+}
+.form-response-message.success {
+    background-color: rgba(0, 255, 255, 0.15);
+    border: 1px solid #00ffff;
+    color: #00ffff;
+    text-shadow: 0 0 5px #00ffff88;
+}
+.form-response-message.error {
+    background-color: rgba(230, 0, 230, 0.15);
+    border: 1px solid #e600e6;
+    color: #e600e6;
+    text-shadow: 0 0 5px #e600e688;
+}
+
+/* MODIFICACIÓN: Ajustes responsivos para el formulario de contacto/sugerencias */
+@media (max-width: 480px) {
+    .suggestion-form-container { 
+        padding: 20px 15px;
+    }
+}
+
+/* --- NUEVOS ESTILOS PARA VISOR DE IMÁGENES (LIGHTBOX CSS-ONLY) --- */
+.artist-image {
+    cursor: zoom-in; /* Cambia el cursor para indicar que es clickeable */
+}
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 2000;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Oculto por defecto y con animación */
+    opacity: 0;
+    pointer-events: none; /* No se puede interactuar cuando está oculto */
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* La magia: muestra el lightbox cuando su ID es el # de la URL */
+.lightbox:target {
+    opacity: 1;
+    pointer-events: auto; /* Se puede interactuar cuando está visible */
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 85%;
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.lightbox-close:hover {
+    color: #00ffff;
+}
