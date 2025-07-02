@@ -250,19 +250,19 @@ header {
 }
 
 .nav-buttons {
-    display: flex; /* ¡LA MAGIA DE FLEXBOX! */
-    justify-content: space-around; /* Distribuye el espacio entre los 4 botones */
+    display: flex;
+    justify-content: space-around;
     padding: 5px 0;
 }
 
 .nav-item {
-    flex: 1; /* <-- ¡ESTA ES LA CLAVE! Cada botón ocupa una porción igual */
-    text-align: center; /* Centra el texto dentro de su espacio */
+    flex: 1; 
+    text-align: center;
     color: #cccccc;
     text-decoration: none;
     padding: 10px 5px;
     font-family: 'Orbitron', sans-serif;
-    font-size: 13px; /* Tamaño legible en móviles */
+    font-size: 13px;
     text-transform: uppercase;
     transition: background-color 0.3s, color 0.3s;
     border-radius: 5px;
@@ -270,8 +270,8 @@ header {
 }
 
 .nav-item:hover {
-    background-color: rgba(230, 0, 230, 0.15); /* Fondo magenta sutil */
-    color: #e600e6; /* Texto magenta */
+    background-color: rgba(230, 0, 230, 0.15);
+    color: #e600e6;
 }
 
 .nav-item.active {
@@ -312,25 +312,25 @@ header {
     margin: 0 auto 1.5rem auto;
     font-family: 'Orbitron', sans-serif;
 }
-.upcoming-title { /* Título "Próximos en este género" */
+.upcoming-title {
     color: #00ffff;
     text-align: left;
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    padding-left: 0; /* Sin padding si está dentro de genre-section */
+    padding-left: 0;
     text-transform: uppercase;
     font-weight: 500;
 }
-.genre-section .party-grid { /* Party grid dentro de una sección de género */
-    padding: 0; /* Sin padding extra */
-    margin-bottom: 0; /* Sin margen inferior extra */
+.genre-section .party-grid {
+    padding: 0;
+    margin-bottom: 0;
 }
 
 /* Estilos para página de Artistas */
 .artists-container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 1rem 2rem 1rem; /* Espacio inferior */
+    padding: 0 1rem 2rem 1rem;
 }
 .artist-card {
     background: #111;
@@ -345,12 +345,12 @@ header {
      box-shadow: 0 8px 25px rgba(0, 255, 255, 0.2);
 }
 .artist-image {
-    width: 100%; /* Ocupa todo el ancho en móvil */
+    width: 100%;
     height: auto;
-    max-height: 400px; /* Limita altura en móvil */
-    object-fit: cover; /* Cubre el espacio asignado */
+    max-height: 400px;
+    object-fit: cover;
     display: block;
-    border-bottom: 2px solid #00ffff; /* Borde inferior en móvil */
+    border-bottom: 2px solid #00ffff;
 }
 .artist-info { padding: 1.5rem; }
 .artist-name {
@@ -358,7 +358,7 @@ header {
     font-size: 2rem;
     color: #ffffff;
     text-shadow: 0 0 8px #ffffffaa;
-    text-align: center; /* Centrado en móvil */
+    text-align: center;
     margin-bottom: 0.5rem;
     text-transform: uppercase;
 }
@@ -366,7 +366,7 @@ header {
     font-family: 'Orbitron', sans-serif;
     font-size: 0.9rem;
     color: #00ffff;
-    text-align: center; /* Centrado en móvil */
+    text-align: center;
     margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -375,10 +375,10 @@ header {
     color: #dddddd;
     font-size: 1rem;
     margin-bottom: 1.5rem;
-    text-align: justify; /* Justificado para mejor lectura */
-    hyphens: auto; /* Permite división de palabras */
+    text-align: justify;
+    hyphens: auto;
 }
-.artist-upcoming-title { /* "Próximos eventos del artista" */
+.artist-upcoming-title {
     color: #e600e6;
     font-size: 1.3rem;
     margin-bottom: 1rem;
@@ -388,19 +388,19 @@ header {
     border-bottom: 1px solid #e600e655;
     padding-bottom: 0.3rem;
 }
-.artist-event-grid { /* Party grid específico para artistas */
+.artist-event-grid {
     padding: 0;
-    max-width: none; /* Sin max-width para que ocupe el contenedor */
+    max-width: none;
     margin: 0;
-    gap: 0.8rem; /* Espaciado menor */
-    grid-template-columns: repeat(2, 1fr); /* Siempre 2 columnas aquí */
+    gap: 0.8rem;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 /* Estilos para página de Información */
 .info-container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 1rem 1.5rem 3rem 1.5rem; /* Espacio inferior */
+    padding: 1rem 1.5rem 3rem 1.5rem;
     color: #cccccc;
 }
 .info-section { margin-bottom: 2.5rem; }
@@ -425,7 +425,7 @@ header {
 .info-logo-emphasis img { max-width: 250px; height: auto; margin-bottom: 1rem; }
 
 /* Media Queries para responsividad general */
-@media (min-width: 768px) { /* Estilos para Tablets y Escritorio */
+@media (min-width: 768px) {
     .header-content {
         flex-wrap: nowrap;
     }
@@ -440,8 +440,8 @@ header {
         order: 0; 
     }
     .header-right { 
-        order: 2; /* Movemos todo el bloque a la derecha */
-        margin-left: auto; /* Empuja el bloque a la derecha */
+        order: 2;
+        margin-left: auto;
         gap: 20px;
     }
     .logo-container {
@@ -460,20 +460,16 @@ header {
         padding: 0 !important; 
         box-shadow: none !important;
         border: none !important; 
-        order: 1; /* Buscador entre título y header-right */
+        order: 1;
         margin: 0 15px; 
-        flex-grow: 1; /* Permitimos que crezca */
+        flex-grow: 1;
     }
-
-    /* Asegura que el título, logo e info no se oculten por el checkbox en desktop */
     .search-toggle-checkbox:checked ~ .header-title,
     .search-toggle-checkbox:checked ~ .header-right {
         opacity: 1;
         pointer-events: auto;
     }
-
     .main-title { font-size: 2.5rem; }
-
     main > .party-grid { 
         grid-template-columns: repeat(3, 1fr);
         max-width: 1000px;
@@ -502,7 +498,6 @@ header {
     .artist-genre { text-align: left; }
     .artist-bio { text-align: left; }
     .artist-event-grid { grid-template-columns: repeat(2, 1fr); }
-
     .info-container {
          max-width: 900px;
          padding: 2rem 2rem 4rem 2rem;
@@ -511,7 +506,7 @@ header {
     .info-section p { font-size: 1.1rem; }
 }
 
-@media (min-width: 1024px) { /* Estilos para Escritorio más grande */
+@media (min-width: 1024px) {
     main > .party-grid {
         grid-template-columns: repeat(4, 1fr); 
         max-width: 1200px;
@@ -531,13 +526,11 @@ header {
     background: #030303;
     overflow: hidden; 
 }
-
 .genre-slider-container {
     width: 100%;
     height: 100px; 
     margin: 0 auto;
 }
-
 .genre-slide {
     text-align: center;
     background: #101010;
@@ -556,11 +549,7 @@ header {
     box-shadow: 0 3px 10px #e600e640, 0 0 8px #00ffff25;
     border-color: #e600e660;
 }
-
-.genre-slide-content {
-    padding: 8px;
-}
-
+.genre-slide-content { padding: 8px; }
 .genre-slide h3 {
     font-family: 'Audiowide', cursive;
     color: #ffffff;
@@ -571,18 +560,14 @@ header {
     overflow: hidden; 
     text-overflow: ellipsis; 
 }
-
-/* Colores específicos para cada género (sombras de texto) */
 .genre-slide--techno h3 { text-shadow: 0 0 6px #00ffff, 0 0 12px #00ffff55; }
 .genre-slide--cachengue h3 { text-shadow: 0 0 6px #e600e6, 0 0 12px #e600e655; }
 .genre-slide--techengue h3 { text-shadow: 0 0 6px #ff6600, 0 0 12px #ff660055; }
 .genre-slide--reggaeton h3 { text-shadow: 0 0 6px #ffee00, 0 0 12px #ffee0055; }
 .genre-slide--electronica h3 { text-shadow: 0 0 6px #33ff33, 0 0 12px #33ff3355; }
 .genre-slide--house h3 { text-shadow: 0 0 6px #6666ff, 0 0 12px #6666ff55; }
-.genre-slide--indie h3 { text-shadow: 0 0 6px #cccccc, 0 0 12px #cccccc55; } /* TRAP/RAP */
+.genre-slide--indie h3 { text-shadow: 0 0 6px #cccccc, 0 0 12px #cccccc55; }
 .genre-slide--pop h3 { text-shadow: 0 0 6px #ff80ed, 0 0 12px #ff80ed55; }
-
-/* Botones de navegación del slider Swiper */
 .genre-slider-container .swiper-button-next,
 .genre-slider-container .swiper-button-prev {
     color: #00ffff;
@@ -598,61 +583,32 @@ header {
     color: #e600e6;
     transform: translateY(-50%) scale(1.05);
 }
-
 .genre-slider-container .swiper-button-next::after,
 .genre-slider-container .swiper-button-prev::after { 
     font-size: 18px;
     font-weight: bold;
     text-shadow: 0 0 4px rgba(0,0,0,0.4);
 }
-
-/* Ajustes responsivos para el slider de géneros */
-@media (max-width: 480px) { /* Pantallas muy pequeñas */
-    .genre-slider-container {
-        height: 90px;
-    }
-    .genre-slide h3 {
-        font-size: 0.9rem;
-    }
+@media (max-width: 480px) {
+    .genre-slider-container { height: 90px; }
+    .genre-slide h3 { font-size: 0.9rem; }
     .genre-slider-container .swiper-button-next,
-    .genre-slider-container .swiper-button-prev {
-        width: 30px;
-        height: 30px;
-    }
+    .genre-slider-container .swiper-button-prev { width: 30px; height: 30px; }
     .genre-slider-container .swiper-button-next::after,
-    .genre-slider-container .swiper-button-prev::after {
-        font-size: 16px;
-    }
-    .party-date { 
-        font-size: 0.8em;
-        padding: 6px 8px;
-    }
+    .genre-slider-container .swiper-button-prev::after { font-size: 16px; }
+    .party-date { font-size: 0.8em; padding: 6px 8px; }
 }
-
-@media (min-width: 768px) { /* Tablets */
-    .genre-slider-container {
-        height: 110px;
-    }
-    .genre-slide h3 {
-        font-size: 1.1rem;
-    }
+@media (min-width: 768px) {
+    .genre-slider-container { height: 110px; }
+    .genre-slide h3 { font-size: 1.1rem; }
 }
-
-@media (min-width: 1024px) { /* Escritorio */
-    .genre-slider-container {
-        height: 120px;
-    }
-    .genre-slide h3 {
-        font-size: 1.2rem;
-    }
+@media (min-width: 1024px) {
+    .genre-slider-container { height: 120px; }
+    .genre-slide h3 { font-size: 1.2rem; }
 }
-@media (min-width: 1200px) { /* Escritorio grande */
-    .genre-slider-container {
-        height: 130px;
-    }
-    .genre-slide h3 {
-        font-size: 1.3rem;
-    }
+@media (min-width: 1200px) {
+    .genre-slider-container { height: 130px; }
+    .genre-slide h3 { font-size: 1.3rem; }
 }
 
 /* Placeholder para la página de Tickets */
@@ -666,7 +622,6 @@ header {
     min-height: calc(100vh - 200px - 100px); 
     color: #ffffff;
 }
-
 .tickets-placeholder-container .icon-ticket {
     width: 80px;
     height: 80px;
@@ -675,7 +630,6 @@ header {
     opacity: 0.7;
     filter: drop-shadow(0 0 10px #00ffff);
 }
-
 .tickets-placeholder-title {
     font-family: 'Audiowide', cursive;
     font-size: 2.5rem;
@@ -685,7 +639,6 @@ header {
     text-transform: uppercase;
     line-height: 1.2;
 }
-
 .tickets-placeholder-subtitle {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.2rem;
@@ -694,7 +647,6 @@ header {
     margin-bottom: 30px;
     line-height: 1.6;
 }
-
 .tickets-placeholder-cta { 
     font-family: 'Orbitron', sans-serif;
     font-size: 1rem;
@@ -707,33 +659,20 @@ header {
     transition: all 0.3s ease;
     box-shadow: 0 0 8px #00ffff55, inset 0 0 5px #00ffff33;
 }
-
 .tickets-placeholder-cta:hover {
     background-color: #00ffff22;
     color: #ffffff;
     box-shadow: 0 0 15px #00ffff, inset 0 0 10px #00ffff55;
     transform: scale(1.05);
 }
-
 @media (max-width: 768px) { 
-    .tickets-placeholder-title {
-        font-size: 2rem;
-    }
-    .tickets-placeholder-subtitle {
-        font-size: 1rem;
-    }
-    .tickets-placeholder-container .icon-ticket {
-        width: 60px;
-        height: 60px;
-    }
+    .tickets-placeholder-title { font-size: 2rem; }
+    .tickets-placeholder-subtitle { font-size: 1rem; }
+    .tickets-placeholder-container .icon-ticket { width: 60px; height: 60px; }
 }
 @media (max-width: 480px) { 
-    .tickets-placeholder-title {
-        font-size: 1.7rem;
-    }
-     .tickets-placeholder-subtitle {
-        font-size: 0.9rem;
-    }
+    .tickets-placeholder-title { font-size: 1.7rem; }
+     .tickets-placeholder-subtitle { font-size: 0.9rem; }
 }
 
 /* Estilos para la página de Detalle de Evento */
@@ -742,7 +681,6 @@ header {
     margin: 0 auto;
     padding: 20px 15px 40px 15px; 
 }
-
 .event-flyer-container {
     margin-bottom: 25px;
     border: 2px solid #00ffff;
@@ -750,7 +688,6 @@ header {
     overflow: hidden;
     box-shadow: 0 0 15px #00ffff66;
 }
-
 .event-flyer-container img {
     width: 100%;
     height: auto;
@@ -758,7 +695,6 @@ header {
     aspect-ratio: 16 / 9; 
     object-fit: cover;
 }
-
 .event-section {
     background-color: #080808; 
     padding: 20px;
@@ -767,7 +703,6 @@ header {
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
-
 .event-section h2 { 
     font-family: 'Audiowide', cursive;
     color: #e600e6;
@@ -778,7 +713,6 @@ header {
     border-bottom: 1px solid #e600e655;
     text-transform: uppercase;
 }
-
 .event-section h3 { 
     font-family: 'Audiowide', cursive;
     color: #00ffff;
@@ -787,7 +721,6 @@ header {
     margin-top: 20px;
     margin-bottom: 10px;
 }
-
 .event-section p, .event-section ul li { 
     color: #cccccc;
     font-family: 'Orbitron', sans-serif;
@@ -795,16 +728,8 @@ header {
     line-height: 1.7;
     margin-bottom: 10px;
 }
-.event-section ul { 
-    list-style: none;
-    padding-left: 0;
-}
-
-.event-section p strong { 
-    color: #00ffff;
-    font-weight: 500;
-}
-
+.event-section ul { list-style: none; padding-left: 0; }
+.event-section p strong { color: #00ffff; font-weight: 500; }
 .map-container { 
     position: relative;
     overflow: hidden;
@@ -814,7 +739,6 @@ header {
     border-radius: 5px;
     margin-top: 15px;
 }
-
 .map-container iframe {
     position: absolute;
     top: 0;
@@ -825,27 +749,23 @@ header {
     height: 100%;
     border: none;
 }
-
 .menu-table { 
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
 }
-
 .menu-table th, .menu-table td {
     border: 1px solid #00ffff44;
     padding: 10px 12px;
     text-align: left;
     font-family: 'Orbitron', sans-serif;
 }
-
 .menu-table th { 
     background-color: #00ffff1a;
     color: #00ffff;
     font-size: 1rem;
     text-transform: uppercase;
 }
-
 .menu-table td {
     color: #dddddd;
     font-size: 0.9rem;
@@ -855,7 +775,6 @@ header {
     color: #00ffff;
     font-weight: 500;
 }
-
 .social-links-list { 
     list-style: none;
     padding: 0;
@@ -864,7 +783,6 @@ header {
     gap: 15px; 
     margin-top: 10px;
 }
-
 .social-links-list li a {
     color: #00ffff;
     text-decoration: none;
@@ -882,7 +800,6 @@ header {
     border-color: #00ffff;
     box-shadow: 0 0 8px #00ffff88;
 }
-
 .age-restriction { 
     background-color: #e600e61a;
     border: 1px solid #e600e688;
@@ -899,7 +816,6 @@ header {
     text-transform: uppercase;
     text-shadow: 0 0 5px #e600e6aa;
 }
-
 .lineup-list { 
     list-style: none;
     padding: 0;
@@ -914,7 +830,6 @@ header {
     margin-bottom: 0;
     padding-bottom: 0;
 }
-
 .artist-lineup-item > p {
     font-size: 1.2rem; 
     color: #ffffff;
@@ -923,14 +838,12 @@ header {
     font-family: 'Audiowide', cursive; 
     text-shadow: 0 0 3px #ffffff55;
 }
-
 .artist-social-links { 
     display: flex;
     gap: 10px;
     margin-top: 5px;
     flex-wrap: wrap;
 }
-
 .artist-social-link { 
     display: inline-flex; 
     align-items: center;
@@ -953,7 +866,6 @@ header {
     box-shadow: 0 0 8px #00ffff88;
     transform: translateY(-1px);
 }
-
 .buy-tickets-container { 
     margin-top: 20px;
     text-align: center;
@@ -961,7 +873,6 @@ header {
 .top-buy-button { 
     margin-bottom: 30px; 
 }
-
 .buy-tickets-btn { 
     display: inline-block;
     padding: 12px 30px;
@@ -984,18 +895,11 @@ header {
     transform: scale(1.05) translateY(-2px);
     color: #fff;
 }
-
-/* Ajustes responsivos para página de detalle de evento */
 @media (max-width: 768px) {
-    .event-section h2 {
-        font-size: 1.6rem;
-    }
-    .event-section p, .event-section ul li:not(.artist-lineup-item) { 
-        font-size: 0.9rem;
-    }
+    .event-section h2 { font-size: 1.6rem; }
+    .event-section p, .event-section ul li:not(.artist-lineup-item) { font-size: 0.9rem; }
     .menu-table th { font-size: 0.9rem;}
     .menu-table td { font-size: 0.85rem;}
-
     .artist-lineup-item > p { font-size: 1.1rem; }
     .artist-social-link { font-size: 0.75rem; padding: 5px 10px; }
     .buy-tickets-btn { font-size: 1rem; padding: 10px 25px; }
@@ -1010,24 +914,19 @@ header {
     padding: 20px 0;
     background-color: #030303; 
 }
-
 #externalAd { 
     border: none;
     overflow: hidden; 
-    
     width: 300px;
     height: 600px;
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.3); 
 }
-
 @media (min-width: 768px) { 
     #externalAd {
         width: 728px;
         height: 90px;
     }
-    .iframe-ad-container {
-        padding: 25px 0;
-    }
+    .iframe-ad-container { padding: 25px 0; }
 }
 
 /* ESTILOS PARA PÁGINA DE CONTACTO Y FORMULARIOS */
@@ -1036,7 +935,6 @@ header {
     margin: 0 auto 40px auto;
     padding: 20px 15px;
 }
-
 .suggestion-form-container { 
     background-color: #0f0f0f;
     padding: 25px 30px;
@@ -1044,7 +942,6 @@ header {
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.15); 
 }
-
 .suggestion-intro { 
     color: #cccccc;
     font-size: 1rem;
@@ -1052,11 +949,7 @@ header {
     margin-bottom: 25px;
     line-height: 1.6;
 }
-
-.form-group {
-    margin-bottom: 20px;
-}
-
+.form-group { margin-bottom: 20px; }
 .form-group label {
     display: block;
     color: #00ffff;
@@ -1066,7 +959,6 @@ header {
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
-
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group textarea {
@@ -1094,12 +986,7 @@ header {
     border-color: #e600e6;
     box-shadow: 0 0 10px rgba(230, 0, 230, 0.3), inset 0 0 8px rgba(230, 0, 230, 0.2);
 }
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
+.form-group textarea { resize: vertical; min-height: 100px; }
 .error-message {
     display: block;
     color: #ff4d4d;
@@ -1107,13 +994,11 @@ header {
     margin-top: 5px;
     min-height: 1em;
 }
-
 .form-group input.input-error,
 .form-group textarea.input-error {
     border-color: #ff4d4d !important;
     box-shadow: 0 0 8px rgba(255, 77, 77, 0.5) !important;
 }
-
 .submit-btn {
     display: block;
     width: 100%;
@@ -1139,7 +1024,6 @@ header {
     transform: translateY(-2px);
     color: #0a0a0a;
 }
-
 .form-response-message {
     margin-top: 20px;
     padding: 15px;
@@ -1161,19 +1045,14 @@ header {
     color: #e600e6;
     text-shadow: 0 0 5px #e600e688;
 }
-
-/* MODIFICACIÓN: Ajustes responsivos para el formulario de contacto/sugerencias */
 @media (max-width: 480px) {
-    .suggestion-form-container { 
-        padding: 20px 15px;
-    }
+    .suggestion-form-container { padding: 20px 15px; }
 }
 
 /* --- NUEVOS ESTILOS PARA VISOR DE IMÁGENES (LIGHTBOX CSS-ONLY) --- */
 .artist-image {
-    cursor: zoom-in; /* Cambia el cursor para indicar que es clickeable */
+    cursor: zoom-in;
 }
-
 .lightbox {
     position: fixed;
     top: 0;
@@ -1182,23 +1061,17 @@ header {
     height: 100%;
     background: rgba(0, 0, 0, 0.85);
     z-index: 2000;
-    
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* Oculto por defecto y con animación */
     opacity: 0;
-    pointer-events: none; /* No se puede interactuar cuando está oculto */
+    pointer-events: none;
     transition: opacity 0.4s ease-in-out;
 }
-
-/* La magia: muestra el lightbox cuando su ID es el # de la URL */
 .lightbox:target {
     opacity: 1;
-    pointer-events: auto; /* Se puede interactuar cuando está visible */
+    pointer-events: auto;
 }
-
 .lightbox img {
     max-width: 90%;
     max-height: 85%;
@@ -1206,7 +1079,6 @@ header {
     box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
     object-fit: contain;
 }
-
 .lightbox-close {
     position: absolute;
     top: 20px;
@@ -1217,7 +1089,392 @@ header {
     text-decoration: none;
     transition: color 0.3s ease;
 }
-
 .lightbox-close:hover {
     color: #00ffff;
+}
+
+/* --- ESTILOS PARA EL BOTÓN DE PRESENTACIÓN EN LA PÁGINA PRINCIPAL --- */
+
+.presentation-link-container {
+    padding: 2rem 1rem; /* Espaciado superior e inferior para separarlo del contenido y del footer */
+    text-align: center;
+}
+
+.presentation-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-family: 'Audiowide', cursive;
+    font-size: 1rem;
+    color: #00ffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid #00ffff88;
+    border-radius: 6px;
+    background-color: rgba(0, 255, 255, 0.05);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1), inset 0 0 8px rgba(0, 255, 255, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.presentation-btn:hover {
+    color: #000000;
+    background-color: #00ffff;
+    border-color: #00ffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.3);
+    transform: translateY(-3px) scale(1.03);
+}
+
+@media (max-width: 480px) {
+    .presentation-btn {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
+
+
+/* --- ESTILOS PARA PÁGINA DE PRESENTACIÓN (presentacion.html) --- */
+
+.presentation-body {
+    overflow: hidden;
+    padding-bottom: 0;
+}
+.presentation-slider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+.presentation-slider .swiper-slide {
+    display: flex;
+    flex-direction: column; /* Alineación vertical */
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+}
+.slide-content {
+    max-width: 950px;
+    width: 100%;
+    padding: 2rem;
+    background: rgba(10, 10, 10, 0.6);
+    border: 1px solid #00ffff55;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #cccccc;
+    transform: scale(0.95);
+    opacity: 0;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.6s ease;
+}
+.swiper-slide-active .slide-content {
+    transform: scale(1);
+    opacity: 1;
+}
+.slide-logo-container {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.slide-logo-container img {
+    max-width: 280px;
+    height: auto;
+    filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.3));
+}
+.slide-title {
+    font-family: 'Audiowide', cursive;
+    color: #e600e6;
+    text-shadow: 0 0 10px #e600e6, 0 0 20px #e600e688;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+.slide-subtitle {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 500;
+    color: #00ffff;
+    text-shadow: 0 0 8px #00ffff;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.slide-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto 1rem auto;
+}
+.slide-text.small {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #aaa;
+}
+.wireframe-images {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+.wireframe-item {
+    flex: 1;
+    min-width: 200px;
+    max-width: 400px;
+}
+.wireframe-item:first-child {
+    max-width: 250px;
+}
+.wireframe-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 2px solid #00ffff88;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    margin-bottom: 0.5rem;
+}
+.wireframe-caption {
+    color: #00ffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+}
+.design-section {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+.design-subsection {
+    flex: 1;
+    min-width: 300px;
+}
+.color-palette {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.color-swatch {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 5px;
+    font-size: 0.7rem;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+}
+.typography-showcase .font-audiowide {
+    font-family: 'Audiowide', cursive;
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+.typography-showcase .font-orbitron {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+/* ===== NUEVOS ESTILOS PARA PRESUPUESTO ===== */
+.budget-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    width: 100%;
+    max-width: 900px;
+    margin: 1.5rem auto 0 auto;
+}
+.budget-category {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid #ffffff22;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    text-align: left;
+    margin-bottom: 1.5rem; /* Espacio entre categorías en la misma columna */
+}
+/* CORRECCIÓN: Eliminar el margen inferior del último elemento de cada columna para alinear bien */
+.budget-column > .budget-category:last-child {
+    margin-bottom: 0;
+}
+
+.budget-category-title {
+    color: #00ffff;
+    font-family: 'Audiowide', cursive;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid #00ffff55;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+.budget-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.85rem;
+    font-family: 'Orbitron', sans-serif;
+}
+.budget-category ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ffffff11;
+}
+.budget-category ul li:last-child {
+    border-bottom: none;
+}
+.budget-category ul li span:last-child {
+    color: #00ffff;
+    font-weight: 500;
+    white-space: nowrap;
+    padding-left: 1rem;
+}
+.budget-total {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 900px;
+    margin: 1.5rem auto 0 auto;
+    padding: 0.8rem 1.5rem;
+    font-family: 'Audiowide', cursive;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: #e600e6;
+    border: 1px solid #e600e688;
+    border-radius: 8px;
+    background: rgba(230, 0, 230, 0.1);
+}
+.budget-total .total-amount {
+    color: #ffffff;
+}
+
+.final-screenshots {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+.screenshot-item {
+    flex: 1;
+    min-width: 250px;
+    max-width: 450px;
+}
+.screenshot-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 2px solid #e600e688;
+    box-shadow: 0 0 15px rgba(230, 0, 230, 0.2);
+    margin-bottom: 0.5rem;
+}
+.screenshot-caption {
+    color: #e600e6;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.final-screenshots.conclusion-images {
+    margin-top: 2rem;
+}
+.final-screenshots.conclusion-images .screenshot-item {
+    max-width: 350px;
+}
+.final-screenshots.conclusion-images .screenshot-item img {
+     border: 2px solid #00ffff88;
+     box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+     aspect-ratio: 1/1;
+     object-fit: cover;
+}
+.final-screenshots.conclusion-images .screenshot-caption {
+     color: #00ffff;
+}
+.final-thanks {
+    margin-top: 2rem;
+    opacity: 0.9;
+}
+.presentation-slider .swiper-button-next,
+.presentation-slider .swiper-button-prev {
+    color: #00ffff;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+.presentation-slider .swiper-button-next:hover,
+.presentation-slider .swiper-button-prev:hover {
+    color: #e600e6;
+    transform: scale(1.1);
+}
+.presentation-slider .swiper-pagination-bullet {
+    background: #cccccc;
+    opacity: 0.5;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+.presentation-slider .swiper-pagination-bullet-active {
+    background: #00ffff;
+    opacity: 1;
+    box-shadow: 0 0 8px #00ffff;
+}
+.presentation-home-btn {
+    display: inline-block;
+    margin-top: 2.5rem;
+    padding: 14px 30px;
+    font-family: 'Audiowide', cursive;
+    font-size: 1.1rem;
+    color: #e600e6;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border: 2px solid #e600e6;
+    border-radius: 8px;
+    background-color: rgba(230, 0, 230, 0.1);
+    box-shadow: 0 0 15px rgba(230, 0, 230, 0.2), inset 0 0 10px rgba(230, 0, 230, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+.presentation-home-btn:hover {
+    color: #ffffff;
+    background-color: #e600e6;
+    box-shadow: 0 0 25px rgba(230, 0, 230, 0.6), 0 0 40px rgba(230, 0, 230, 0.4);
+    transform: scale(1.05) translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .slide-content { padding: 1.5rem; backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); }
+    .slide-logo-container img { max-width: 220px; }
+    .slide-title { font-size: 1.8rem; }
+    .slide-subtitle { font-size: 1.2rem; }
+    .slide-text { font-size: 0.95rem; }
+
+    /* ===== ESTILOS RESPONSIVE PARA PRESUPUESTO ===== */
+    .budget-container {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+        gap: 0;
+    }
+    .budget-category {
+        margin-bottom: 1.5rem;
+    }
+    .budget-column:last-child .budget-category:last-child {
+        margin-bottom: 0;
+    }
+    .budget-total {
+        font-size: 1rem;
+    }
+
+    .wireframe-images, .final-screenshots { flex-direction: column; align-items: center; gap: 1.5rem; }
+    .wireframe-item, .screenshot-item { max-width: 85%; }
+    .wireframe-item:first-child { max-width: 250px; }
+    .presentation-home-btn { font-size: 1rem; padding: 12px 25px; margin-top: 2rem; }
+}
+@media (max-width: 480px) {
+    .slide-content { padding: 1rem; }
+    .slide-logo-container img { max-width: 180px; }
+    .slide-title { font-size: 1.5rem; }
+    .slide-text { font-size: 0.9rem; }
+    .budget-category ul { font-size: 0.8rem; }
 }
